@@ -32,5 +32,5 @@ export const DEFAULT_SETTINGS: StoreSettings = {
   ],
 }
 
-export const FALLBACK_NAME = 'Your Ice Cream Shop'
+export const FALLBACK_NAME = "Jai's Store"
 export const REFERENCE_PHOTO = '/assets/reference-photo.jpg'

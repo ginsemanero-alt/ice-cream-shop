@@ -38,7 +38,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
 
   const name = settings.business_name.trim() || FALLBACK_NAME
   useEffect(() => {
-    document.title = settings.business_name.trim() || 'Ice Cream Shop'
+    document.title = settings.business_name.trim() || FALLBACK_NAME
   }, [settings.business_name])
 
   return <Ctx.Provider value={{ settings, loading, error, reload, name }}>{children}</Ctx.Provider>
