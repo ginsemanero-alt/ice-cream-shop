@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-cream-100 font-sans text-choco-700 antialiased;
+  }
+  h1, h2, h3, h4 { @apply font-display font-black tracking-tight text-choco-800; }
+  :focus-visible { @apply outline-none ring-4 ring-berry-300 ring-offset-2 ring-offset-cream-100; }
+  img { @apply max-w-full; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 py-3 font-display text-base font-extrabold transition active:translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary { @apply bg-choco-700 text-cream-50 shadow-pop hover:bg-choco-600 active:shadow-none; }
+  .btn-pink { @apply bg-berry-400 text-white shadow-pop hover:bg-berry-500 active:shadow-none; }
+  .btn-ghost { @apply border-2 border-choco-700 text-choco-700 hover:bg-choco-700 hover:text-cream-50; }
+  .btn-danger { @apply bg-berry-600 text-white hover:bg-berry-500; }
+  .btn-sm { @apply min-h-[40px] px-4 py-2 text-sm; }
+  .card { @apply rounded-[2.5rem] bg-cream-50 p-6 shadow-soft sm:rounded-[3.5rem] sm:p-8; }
+  .input {
+    @apply w-full rounded-2xl border-2 border-choco-100 bg-white px-4 py-3 text-choco-800 placeholder:text-choco-300 focus:border-berry-400;
+  }
+  .label { @apply mb-1 block text-sm font-bold text-choco-600; }
+  .field-error { @apply mt-1 text-sm font-semibold text-berry-600; }
+  .container-page { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+  .badge { @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-extrabold uppercase tracking-wide; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* Lift the dim reference photo so it looks warm rather than muddy */
+.photo-lift { filter: brightness(1.28) contrast(1.08) saturate(1.12); }
